@@ -10,11 +10,13 @@ import java.util.List;
 
 @Table
 @Entity
-public class Student extends HashSet<Student> {
+public class Student  {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int sid;
     private String sname;
+
+    @ManyToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
     private Department department;
     public Student()
     {
@@ -37,7 +39,7 @@ public class Student extends HashSet<Student> {
 
 
     }
-    @ManyToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+
     public Department getDepartment()
     {
         return department;

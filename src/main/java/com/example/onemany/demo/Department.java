@@ -6,7 +6,6 @@ import java.util.List;
 
 @Entity
 @Table
-@Embeddable
 public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
